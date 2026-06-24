@@ -1,1 +1,3 @@
-# fichier js1
+function penis(cm, diametre) {
+    console.log("oui")
+}
