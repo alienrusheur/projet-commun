@@ -1,16 +1,16 @@
 const Baseurl = "https://api.open-meteo.com/v1/forecast";
 
-function fetchMeteo(lat, lon) {
-const ville = "Paris";
+async function fetchMeteo(ville) {
+    
+    const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${ville}&count=1&language=fr`);
+    const geoData = await geoRes.json();
+    const { latitude, longitude } = geoData.results[0];
 
-const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${ville}&count=1&language=fr`);
-const geoData = await geoRes.json();
-const { latitude, longitude } = geoData.results[0];
+    
+    const meteoRes = await fetch(`${Baseurl}?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
+    const meteoData = await meteoRes.json();
 
-const meteoRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
-const meteoData = await meteoRes.json();
-
-
+    console.log(meteoData.current_weather);
 }
 
-console.log(meteoData.current_weather);
+fetchMeteo("Paris");
