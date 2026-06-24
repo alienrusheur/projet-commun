@@ -10,7 +10,7 @@ async function fetchMeteo(ville) {
     const meteoRes = await fetch(`${Baseurl}?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
     const meteoData = await meteoRes.json();
 
-    console.log(meteoData.current_weather);
+    
 }
 
 fetchMeteo("Paris");
