@@ -10,7 +10,15 @@ export async function fetchMeteo(ville) {
     const meteoRes = await fetch(`${Baseurl}?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
     const meteoData = await meteoRes.json();
 
-    console.log(meteoData.current_weather);
+    return meteoData.current_weather;
 }
 
-fetchMeteo("Paris");
+fetchMeteo("Paris").then(res => console.log(res));
+fetchMeteo("Madrid").then(res => console.log(res));
+fetchMeteo("Ouarzazate").then(res => console.log(res));
+fetchMeteo("Phoenix").then(res => console.log(res));
+fetchMeteo("Shangai").then(res => console.log(res));
+fetchMeteo("Sydney").then(res => console.log(res));
+fetchMeteo("Oslo").then(res => console.log(res));
+fetchMeteo("Groenland").then(res => console.log(res));
+
