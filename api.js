@@ -1,6 +1,6 @@
 const Baseurl = "https://api.open-meteo.com/v1/forecast";
 
-async function fetchMeteo(ville) {
+export async function fetchMeteo(ville) {
     
     const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${ville}&count=1&language=fr`);
     const geoData = await geoRes.json();
