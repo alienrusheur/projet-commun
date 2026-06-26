@@ -15,9 +15,12 @@ export function render() {
     load.classList.remove("hidden");
 
     nameville.innerHTML = ville;
-    temp.innerHTML = meteoData.current_weather.temperature;
-    desc.innerHTML = meteoData.current_weather.weathercode; 
-    vent.innerHTML = meteoData.current_weather.windspeed;
-    // humidite.innerHTML = meteoData.current_weather.
+    temp.innerHTML = meteoData.current.temperature_2m;
+    desc.innerHTML = meteoData.current.weathercode; 
+    vent.innerHTML = meteoData.current.windspeed_10m;
+    humidite.innerHTML = meteoData.current.relativehumidity_2m
+
+    // cartesprev.innerHTML = meteoData.current_weather.
+
 
 }
