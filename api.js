@@ -39,7 +39,6 @@ export async function fetchMeteo(ville) {
       code: meteoData.daily.weathercode[i],
     }))
   };
-  render();
 }
 
 fetchMeteo("Paris").then(res => console.log(res));
