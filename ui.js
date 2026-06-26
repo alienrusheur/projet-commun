@@ -1,5 +1,5 @@
 
-export async function render() {
+export function render() {
 
     const load = document.querySelector("#loading");
     const err = document.querySelector("#erreur");
@@ -15,11 +15,11 @@ export async function render() {
 
     load.classList.remove("hidden");
 
-    nameville.innerHTML = await ville;
-    temp.innerHTML = await meteoData.current.temperature_2m;
-    desc.innerHTML = await meteoData.current.weathercode; 
-    vent.innerHTML = await meteoData.current.windspeed_10m;
-    humidite.innerHTML = await meteoData.current.relativehumidity_2m
+    nameville.innerHTML = ville;
+    temp.innerHTML = meteoData.current.temperature_2m;
+    desc.innerHTML = meteoData.current.weathercode; 
+    vent.innerHTML = meteoData.current.windspeed_10m;
+    humidite.innerHTML = meteoData.current.relativehumidity_2m
 
     // cartesprev.innerHTML = await meteoData.current_weather.
 
