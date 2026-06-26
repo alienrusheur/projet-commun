@@ -1,4 +1,5 @@
 const BASE_URL = "https://api.open-meteo.com/v1/forecast";
+import {render} from './ui.js';
 
 export async function fetchMeteo(ville) {
  
@@ -36,8 +37,9 @@ export async function fetchMeteo(ville) {
       max: meteoData.daily.temperature_2m_max[i],
       min: meteoData.daily.temperature_2m_min[i],
       code: meteoData.daily.weathercode[i],
-    })),
+    }))
   };
+  render();
 }
 
 fetchMeteo("Paris").then(res => console.log(res));
